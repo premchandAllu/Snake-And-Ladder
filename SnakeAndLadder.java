@@ -9,33 +9,36 @@ public class SnakeAndLadder
 	
 	public static void main(String[] args)
 	  { 
-			 //Variables
-			 int position=0;
-			 int random;
-			 int choice;
-			 
-			 random = (int) ( (Math.floor(Math.random() *10 ) % 6) +1 );
-			 choice = (int) ( Math.floor(Math.random() *10 ) % 3) +1;
-			 
-			 switch (choice)
-			 {
-			   case LADDER :
-			      {  position = position + random ;
-				     System.out.println("He got Ladder and his position is "+position);
-				     break; 
-			      }
-			   case SNAKE :
-			      {  position = position - random ;
-			         if(position<0)
-			         { position =0; }
-			         System.out.println("He got Snake and his position is "+position);
-			         break ;
-			      }
-			   case NO_PLAY :
-			      {  System.out.println("No play and his position is "+position);
-			         break ; 
-			       }
-			 }
+		 //Variables
+		 int position=0;
+		 int random;
+		 int choice;
+		 
+         while(position>=0 && position<100)
+         {
+		     random = (int) ( (Math.floor(Math.random() *10 ) % 6) +1 );
+		     choice = (int) ( Math.floor(Math.random() *10 ) % 3) +1;
+		     
+		      switch (choice)
+		       {
+		          case LADDER :
+		           {  position = position + random ;
+			          break; 
+		            }
+		          case SNAKE :
+		           {  
+                   	  position = position - random;
+                   	    if(position<0)
+                   	     { position =0;} 
+		              break ;
+		             }
+		           case NO_PLAY :
+		             break ;
+		          }
+           }
+	     if(position>=100)
+	     { System.out.println("Player has won the game "); }
+
 
 	  }
   }
