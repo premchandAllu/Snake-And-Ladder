@@ -39,11 +39,14 @@ public class SnakeAndLadder
 	          int number= random;
 	          if(position>100)
 	           { position=position-number;}
+	            
+	          count++;
 	    
                if(position==100)
                 { 
-   	              System.out.println("Player has won the game and his final position is "+position); }
-    
+   	              System.out.println("Player has won the game and his final position is "+position);
+   	              System.out.println("No of times dice rolled is "+count);}
+                  
          }	
     }
 }
